@@ -1,0 +1,15 @@
+# GPU override for the laya-decision service.
+#
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d
+#
+# Requires a working NVIDIA runtime (on WSL2: an up-to-date Windows NVIDIA
+# driver; Docker Desktop picks it up automatically). The model auto-falls
+# back to CPU if CUDA is unavailable at startup.
+services:
+  laya:
+    image: laya-decision:gpu
+    build:
+      args:
+        CUDA: "1"
+    gpus: all

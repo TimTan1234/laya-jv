@@ -1,0 +1,9 @@
+# Only the vendored engine, requirements and server are needed in the image.
+*
+!requirements.txt
+!server.py
+!laya-src
+laya-src/assets
+laya-src/notebooks
+laya-src/research
+laya-src/tests
